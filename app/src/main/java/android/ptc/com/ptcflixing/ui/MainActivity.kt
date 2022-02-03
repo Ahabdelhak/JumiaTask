@@ -1,7 +1,8 @@
-package android.ptc.com.ptcflixing
+package android.ptc.com.ptcflixing.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.ptc.com.ptcflixing.R
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 

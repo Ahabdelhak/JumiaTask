@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ptc_android_test.iml" filepath="$PROJECT_DIR$/.idea/ptc_android_test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ptc_android_test.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ptc_android_test.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JumiaTask.iml" filepath="$PROJECT_DIR$/.idea/modules/JumiaTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/JumiaTask.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/JumiaTask.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/networking/JumiaTask.networking.iml" filepath="$PROJECT_DIR$/.idea/modules/networking/JumiaTask.networking.iml" />
     </modules>
   </component>
 </project>
