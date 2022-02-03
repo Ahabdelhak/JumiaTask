@@ -6,6 +6,6 @@ object ApiEndpoints {
 
     private const val BASE_URL = BuildConfig.SERVER_URL
 
-    const val REGISTER = BASE_URL + "public/register"
+    const val Config = BASE_URL + "configurations/"
 
 }

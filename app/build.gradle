@@ -70,6 +70,9 @@ dependencies {
     // Kotlin Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines"
 
+    def koin_version= "3.1.2"
+    implementation "io.insert-koin:koin-android:$koin_version"
+
 }
 repositories {
     mavenCentral()
