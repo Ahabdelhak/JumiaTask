@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.ptc.com.ptcflixing.R
 import android.ptc.com.ptcflixing.data.remote.Resource
+import android.ptc.com.ptcflixing.util.getCacheInstance
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import kotlinx.coroutines.CoroutineScope
@@ -39,7 +40,9 @@ class SplashFragment : Fragment() {
         viewModel.getConfig()
             .observe(viewLifecycleOwner) {
                 when (it) {
-                    is Resource.Success -> findNavController().navigate(R.id.homeFragment)
+                    is Resource.Success -> {
+                        getCacheInstance().config=it.data
+                        findNavController().navigate(R.id.homeFragment)}
                     is Resource.Error -> Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                 }
             }
