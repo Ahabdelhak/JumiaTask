@@ -11,4 +11,5 @@ class ConfigRepository {
             ApiEndpoints.Config,
             RequestType.GET()
         )
-    }}
+    }
+}

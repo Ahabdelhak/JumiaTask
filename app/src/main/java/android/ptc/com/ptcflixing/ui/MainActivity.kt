@@ -3,6 +3,7 @@ package android.ptc.com.ptcflixing.ui
 import android.os.Bundle
 import android.ptc.com.ptcflixing.R
 import android.ptc.com.ptcflixing.data.remote.Resource
+import android.ptc.com.ptcflixing.ui.splash.ConfigViewModel
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity

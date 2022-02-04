@@ -1,4 +1,4 @@
-package android.ptc.com.ptcflixing.ui
+package android.ptc.com.ptcflixing.ui.splash
 
 import android.ptc.com.ptcflixing.base.BaseViewModel
 import android.ptc.com.ptcflixing.data.repository.ConfigRepository
