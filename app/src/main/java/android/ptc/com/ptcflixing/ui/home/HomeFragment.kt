@@ -9,8 +9,10 @@ import android.ptc.com.ptcflixing.R
 import android.ptc.com.ptcflixing.data.remote.Resource
 import android.ptc.com.ptcflixing.databinding.FragmentHomeBinding
 import android.ptc.com.ptcflixing.util.EndlessRecyclerViewScrollListener
+import android.ptc.com.ptcflixing.util.RecyclerItemClickListener
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -51,10 +53,18 @@ class HomeFragment : Fragment() {
     }
 
     private fun initProductRv() {
+
         layoutManager = GridLayoutManager(activity,2)
         binding!!.productRv.layoutManager = layoutManager
         adapter = ProductAdapter()
         binding!!.productRv.adapter = adapter
+        binding!!.productRv.addOnItemTouchListener(RecyclerItemClickListener(requireContext(),object : RecyclerItemClickListener.OnItemClickListener{
+            override fun onItemClick(view: View, position: Int) {
+                findNavController().navigate(R.id.detailsFragment)
+            }
+
+        }))
+
         scrollListener = object : EndlessRecyclerViewScrollListener(layoutManager){
             override fun onLoadMore(page: Int, totalItemsCount: Int, view: RecyclerView) {
                 var pageCount = page

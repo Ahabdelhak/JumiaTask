@@ -10,4 +10,8 @@ object ApiEndpoints {
     fun searchProducts(query:String,page:Int): String {
      return BASE_URL + "search/"+query+"/page/"+page+"/"
     }
+
+    fun productDetails(productId:Int): String {
+     return BASE_URL + "product/"+productId+"/"
+    }
 }

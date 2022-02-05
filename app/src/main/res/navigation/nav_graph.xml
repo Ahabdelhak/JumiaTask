@@ -17,5 +17,10 @@
         android:label="home_key"
         tools:layout="@layout/fragment_home" />
 
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="android.ptc.com.ptcflixing.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
 
 </navigation>

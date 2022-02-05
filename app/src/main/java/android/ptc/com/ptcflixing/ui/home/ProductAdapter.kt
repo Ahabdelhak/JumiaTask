@@ -39,7 +39,7 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.EpisodeHolder>(){
         product.ratingAverage?.let { holder.binding.productRate.rating = product.ratingAverage.toFloat() }
 
         Glide.with(context!!)
-            .load("http://via.placeholder.com/300.png")
+            .load(product.image)
             .placeholder(R.drawable.jumia)
             .error(R.drawable.jumia)
             .into(holder.binding.productImg)
