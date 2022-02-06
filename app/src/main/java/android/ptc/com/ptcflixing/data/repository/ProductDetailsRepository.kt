@@ -6,7 +6,7 @@ import com.jumia.networking.NetworkController
 import com.jumia.networking.RequestType
 
 class ProductDetailsRepository {
-    suspend fun productDetails(productId:Int): ProductDetails {
+    suspend fun productDetails(productId:String): ProductDetails {
         return NetworkController.processRequest(
             ApiEndpoints.productDetails(productId),
             RequestType.GET()
