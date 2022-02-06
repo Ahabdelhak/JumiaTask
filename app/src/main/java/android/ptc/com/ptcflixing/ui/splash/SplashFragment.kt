@@ -42,7 +42,8 @@ class SplashFragment : Fragment() {
                 when (it) {
                     is Resource.Success -> {
                         getCacheInstance().config=it.data
-                        findNavController().navigate(R.id.homeFragment)}
+                        findNavController().navigate(R.id.homeFragment)
+                    }
                     is Resource.Error -> Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                 }
             }

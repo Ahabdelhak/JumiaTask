@@ -13,6 +13,7 @@ import android.ptc.com.ptcflixing.util.Constants.PRODUCT_ID
 import android.ptc.com.ptcflixing.util.EndlessRecyclerViewScrollListener
 import android.ptc.com.ptcflixing.util.RecyclerItemClickListener
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
@@ -31,6 +32,12 @@ class HomeFragment : Fragment() {
     lateinit var scrollListener: EndlessRecyclerViewScrollListener
     lateinit var adapter: ProductAdapter
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            requireActivity()?.finish()
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -80,12 +87,16 @@ class HomeFragment : Fragment() {
         viewModel.getProductResult(mLastQuery!!,page)
             .observe(viewLifecycleOwner) {
                 when (it) {
-                    is Resource.Loading ->{}
+                    is Resource.Loading -> binding?.loading?.visibility=View.VISIBLE
                     is Resource.Success -> {
-                        if (page == 1) adapter.reset()
-                        adapter.addList(it.data?.metadata?.results)
-                    }
-                    is Resource.Error -> Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        binding?.loading?.visibility=View.GONE
+                        if(it.data?.success!!){
+                            if (page == 1) adapter.reset()
+                            adapter.addList(it.data?.metadata?.results)
+                        }else Toast.makeText(requireContext(), it.data.messages.error.message, Toast.LENGTH_SHORT).show()}
+                    is Resource.Error -> {
+                        binding?.loading?.visibility=View.GONE
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()}
                 }
             }
     }

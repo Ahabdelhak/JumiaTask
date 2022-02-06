@@ -7,7 +7,9 @@ data class ProductDetails(
     @SerializedName("metadata")
     val metadata: Metadata,
     @SerializedName("success")
-    val success: Boolean
+    val success: Boolean,
+    @SerializedName("messages")
+    val messages: ProductSearch.Messages
 ) {
     data class Metadata(
         @SerializedName("brand")
@@ -52,6 +54,18 @@ data class ProductDetails(
             val description: String,
             @SerializedName("short_description")
             val shortDescription: String
+        )
+    }
+
+    data class Messages(
+        @SerializedName("error")
+        val error: Error
+    ) {
+        data class Error(
+            @SerializedName("message")
+            val message: String,
+            @SerializedName("reason")
+            val reason: String
         )
     }
 }

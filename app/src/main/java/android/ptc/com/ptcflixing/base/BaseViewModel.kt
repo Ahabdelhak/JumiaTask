@@ -10,7 +10,7 @@ open class BaseViewModel : ViewModel() {
         try {
             emit(Resource.Success(apiMethod.invoke()))
         } catch (throwable: Throwable) {
-            "Something went wrong"
+            emit(Resource.Error(null,message = throwable.message.toString()))
         }
     }
 }

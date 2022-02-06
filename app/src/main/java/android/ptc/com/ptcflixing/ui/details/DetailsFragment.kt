@@ -46,7 +46,15 @@ class DetailsFragment : Fragment() {
             .observe(viewLifecycleOwner) {
                 when (it) {
                     is Resource.Loading ->loading.visibility=View.VISIBLE
-                    is Resource.Success -> setProductValues(it.data?.metadata)
+                    is Resource.Success -> {
+
+                        if(it.data?.success!!)
+                            setProductValues(it.data?.metadata)
+                        else {
+                            loading.visibility=View.GONE
+                            Toast.makeText(requireContext(), it.data.messages.error.message, Toast.LENGTH_SHORT).show()}
+
+                }
                     is Resource.Error -> {
                         loading.visibility=View.GONE
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()}
