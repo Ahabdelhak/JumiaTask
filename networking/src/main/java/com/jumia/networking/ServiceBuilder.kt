@@ -23,7 +23,7 @@ object ServiceBuilder {
 
         val retrofit = Retrofit.Builder()
             .client(client.build())
-            .baseUrl("https://google.com")
+            .baseUrl("http://nd7d1.mocklab.io/")
             .addConverterFactory(newFactory(JumiaRequest::class.java))
             .addConverterFactory(GsonConverterFactory.create())
             .build()

@@ -16,11 +16,9 @@
         android:background="@color/cardview_light_background"
         app:floatingSearch_searchHint="Search..."
         app:floatingSearch_suggestionsListAnimDuration="250"
-        app:floatingSearch_showSearchKey="false"
+        app:floatingSearch_showSearchKey="true"
         app:floatingSearch_leftActionMode="showSearch"
         app:floatingSearch_menu="@menu/search_menu"
         app:floatingSearch_close_search_on_keyboard_dismiss="true"/>
-
-
 
 </com.google.android.material.appbar.AppBarLayout>
