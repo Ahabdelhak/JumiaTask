@@ -1,5 +1,7 @@
 package android.ptc.com.ptcflixing
 
+import android.ptc.com.ptcflixing.util.priceFormatter
+import android.ptc.com.ptcflixing.util.savingFormatter
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -11,8 +13,12 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    @Throws(Exception::class)
-    fun addition_isCorrect() {
-        assertEquals(4, (2 + 2).toLong())
+    fun stringFormatter_priceFormatter() {
+        assertEquals("$ 22,999", 22999.priceFormatter("$", ","))
+    }
+
+    @Test
+    fun stringFormatter_savingFormatter() {
+        assertEquals("-45%", 45.savingFormatter())
     }
 }

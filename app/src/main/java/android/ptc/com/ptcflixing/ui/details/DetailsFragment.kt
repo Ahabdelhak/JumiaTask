@@ -14,6 +14,8 @@ import android.ptc.com.ptcflixing.databinding.FragmentDetailsBinding
 import android.ptc.com.ptcflixing.util.Constants.PRODUCT_ID
 import android.ptc.com.ptcflixing.util.RecyclerItemClickListener
 import android.ptc.com.ptcflixing.util.getCacheInstance
+import android.ptc.com.ptcflixing.util.priceFormatter
+import android.ptc.com.ptcflixing.util.savingFormatter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
@@ -76,10 +78,10 @@ class DetailsFragment : Fragment() {
 
     private fun setProductValues(productData: ProductDetails.Metadata?) {
         loading.visibility=View.GONE
-        binding?.specialPriceView?.text=currency + productData?.specialPrice.toString()
-        binding?.priceView?.text=currency + productData?.price.toString()
+        binding?.specialPriceView?.text=productData?.specialPrice?.priceFormatter(currency,",")
+        binding?.priceView?.text=productData?.price?.priceFormatter(currency,",")
         binding?.priceView?.paintFlags = binding?.priceView?.paintFlags!! or Paint.STRIKE_THRU_TEXT_FLAG
-        binding?.savingPercentageView?.text=productData?.maxSavingPercentage.toString() + " %"
+        binding?.savingPercentageView?.text=productData?.maxSavingPercentage?.savingFormatter()
         binding?.ratingsTotal?.text=productData?.rating?.ratingsTotal.toString()
         binding?.ratingView?.let { binding?.ratingView?.rating = productData?.rating?.average?.toFloat()!! }
         binding?.descriptionView?.text=productData?.summary?.description.toString()

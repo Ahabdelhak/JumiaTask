@@ -6,6 +6,8 @@ import android.ptc.com.ptcflixing.R
 import android.ptc.com.ptcflixing.data.model.ProductSearch
 import android.ptc.com.ptcflixing.databinding.ProductItemBinding
 import android.ptc.com.ptcflixing.util.getCacheInstance
+import android.ptc.com.ptcflixing.util.priceFormatter
+import android.ptc.com.ptcflixing.util.savingFormatter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -32,9 +34,9 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductHolder>(){
         val product = productList[position]
         holder.binding.productName.text = product.name
         holder.binding.brandName.text = product.brand
-        holder.binding.specialPrice.text = currency + product.specialPrice.toString()
-        holder.binding.savingPercentage.text = product.maxSavingPercentage.toString()+ " %"
-        holder.binding.price.text = currency + product.price.toString()
+        holder.binding.specialPrice.text = product.specialPrice.priceFormatter(currency,",")
+        holder.binding.savingPercentage.text = product.maxSavingPercentage.savingFormatter()
+        holder.binding.price.text = product.price.priceFormatter(currency,",")
         holder.binding.price.paintFlags = holder.binding.price.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         product.ratingAverage?.let { holder.binding.productRate.rating = product.ratingAverage.toFloat() }
 
