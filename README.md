@@ -1,147 +1,35 @@
 # ptc_android_test
 
 ![alt tag](screen-porto-tech-center.jpg)
+_______________________
 
-Jumia Porto Tech Center (PTC) is an Agile IT development center, with around 200 IT-specialists, 
-where you will have the opportunity to participate in developing smart solutions for our group companies. 
-We do e-commerce shops, logistics, business intelligence and mobile applications involving a wide range of high-end technologies for tens of millions customers.  
+Please note that this repo created and not updated from 12/2021 , I think my skills and expirence improved alot through this year so please if you want to showcase my expirence let me apply and refactoring the repository.
 
-You can check our job opportunities at our site: https://group.jumia.com/careers.  
-
-We were founded in 2012 and today we are part of Jumia Group powered by Rocket Internet, Millicom, MTN, Axa Group, 
-Goldman Sachs, Orange and CDC.   Working at PTC means being in the first line of e-commerce development in emerging markets.  
-
-What you will find in PTC?  
-
-In PTC you will have an opportunity to develop and apply e-business software solutions for a wide range of business areas. 
-
-You will belong to the international team with the top experts who will inspire and support you in working on an international scale impacting millions of revenue (travelling, logistics, e-shops) and users. 
-
-We are humble and pragmatic. 
-
-We are passionate about what we do, and we have fun while doing it. 
-
-We move in a fast-pace and we are ready to challenge risks. 
-
-We value sharing knowledge and learning from each other. We are flexible and we believe that anything is possible. 
-
-We will offer you second home where you will find the opportunity for growth and career development.
-You will have the opportunity to earn the bonus based on your excellent results. 
-The benefit list includes but is not limited to health insurance, parental bonus, snacks and fruits.
-
-This repo represents the current admission test that is needed to apply for an Android Developer Position.
-
-Android Challenge:
--
-
-The idea is to create an app that is able to list products requested by a query.
-
-The challenge Submission:
-- Create a pull request using the base "development_mocklab" 
-- Title format "Challenge Admission Test - FIRST_NAME LAST_NAME"
-- Write a description about your implementation
-
-Description:
--
-
-The application should be composed by:
-
-    - Splash screen 
-    - Search page 
-    - Result list page 
-    - Item detail page
-
-The following requirements need to be met:
-
-The search must be able to list items from a query.
-
-1. The splash screen:
-    - It's a loading page to request and save some configurations to be used. 
-
-2. The search page:
-    - It's a page that allow the submission of a query to get a result, like Google Search.
-
-3. The result list page:
-    - It's a page that shows the query and respective result, like Google Search.
-    - For each result item, the following should be displayed:
-        - Image;
-        - Name and brand;
-        - Price, old price and discount;
-        - Rating;
-
-4. The item detail page:
-    - It's a page that shows the information about the selected item
-    - The following should be displayed:
-        - Image or image gallery;
-        - Name and brand;
-        - Price, old price and discount;
-        - Rating;
-        - Description;
-
-Mock API: 
--
-
-NOTE: The mocklab API is based in JSON mocks and only supports the following requests.
-
-- Get configurations
-
-    > http://nd7d1.mocklab.io/configurations/
-    
-    The currency should used to format the price and old price.
-
-- Get list items with pagination
-
-    > http://nd7d1.mocklab.io/search/phone/page/1/
-    
-    > http://nd7d1.mocklab.io/search/phone/page/2/
-
-    Parameters:
-    - *"phone"* - the query
-    - *"1"* - the page number (pagination)
-
-- Get detail item
-
-    > http://nd7d1.mocklab.io/product/1/
-
-    > http://nd7d1.mocklab.io/product/2/
-
-    Parameters:
-    - *"1"* - the product identifier "sku"
-    
-    
-- Failure cases
-
-    HTTP 200 - Success false:
-    > http://nd7d1.mocklab.io/product/3/
-    
-    HTTP 404 - Not Found:
-    > http://nd7d1.mocklab.io/search/phone/page/2/
-    
-    > http://nd7d1.mocklab.io/product/4/
-
-
-Required tech implementations:
--
-- Android Architecture Components;
-- Material Design Components;
-- Kotlin;
-- Fragments;
-- DataBinding;
-
-
-We value the following implementations:
--
-- Coroutines or RxAndroid;
-- Unit tests;
-- Animations;
-- Image Loader (Volley/Picasso/Glide);
-- Retrofit/OKHttp client for API communication;
-
-
-Similar screens:
--
-
-![Screenshot](screen_1.jpg)
-
-
-![Screenshot](screen_2.jpg)
+:point_right: NOW I can Apply this stacks and more:
+____
+- [Android Jetpack](https://developer.android.com/jetpack) - Jetpack is a suite of libraries to help developers build state-of-the-art applications.
+- [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#stateflow) - StateFlow is a state-holder observable flow that emits the current and new state updates to its collectors.
+- [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Hilt is a dependency injection library for Android.
+- [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serialization) - A multiplatform Kotlin serialization library.
+- [Coil](https://github.com/coil-kt/coil) - An image loading library.
+- [Detekt](https://github.com/detekt/detekt) - A static code analysis library for Kotlin.
+- [Ktlint](https://github.com/pinterest/ktlint) - A library for formatting Kotlin code according to official guidelines.
+- [Testing](https://developer.android.com/training/testing) - The app is currently covered with unit tests and instrumentation tests.
+    - [JUnit](https://junit.org/junit5) - JUnit is a unit testing framework for the Java programming language.
+    - [Truth](https://github.com/google/truth) - Truth is a library providing fluent assertions for Java and Android.
+    - [MockK](https://github.com/mockk/mockk) - MockK is a mocking library for Kotlin.
+    - [Coroutines Test](https://github.com/Kotlin/kotlinx.coroutines/tree/master/kotlinx-coroutines-test) - A library for testing Kotlin coroutines.
+    - [Turbine](https://github.com/cashapp/turbine) - A testing library for Kotlin Flows.
+    - [Dagger Hilt Test](https://developer.android.com/training/dependency-injection/hilt-testing) - A testing library for modifying the Dagger bindings in instrumented tests.
+- [Gradle's Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - Gradle’s Kotlin DSL is an alternative syntax to the Groovy DSL with an enhanced editing experience.
+- [buildSrc](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources) - A special module within the project to manage dependencies.
+- Apply ktlint for checking code style.
+- Apply CI|CD and automate some tasks using github actions.
+- Use git hooks to automate code checking and styling before any new commit.
+- Handle Different Build Variants.
+- Use JetPack compose for UI .
+- Use Room as a local DB for caching data.
+- Use EncryptedSharedPreferences for securing user data.
+- Secure app from reverse engineering.
+- Secure app from reverse engineering and protection against security threats.
+- Apply ssl certificate concept.
